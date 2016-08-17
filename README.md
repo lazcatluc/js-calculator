@@ -5,9 +5,9 @@ Very small project to integrate plain JS unit testing using Karma and PhantomJS.
 * Install NodeJS (npm included) from https://nodejs.org/en/ (LTS version v4.5.0)
 * Run
 ```sh
-npm install karma --save-dev
-npm install karma-phantomjs-launcher --save-dev
-npm install karma-jasmine --save-dev
+npm install karma
+npm install karma-phantomjs-launcher
+npm install karma-jasmine
 npm install -g karma-cli
 ```
 * Inside the root folder of this project
