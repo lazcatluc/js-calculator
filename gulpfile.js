@@ -3,11 +3,13 @@ var gulp  = require('gulp'),
 	clean = require('gulp-clean'),
 	concat = require('gulp-concat'),
 	sonar = require('gulp-sonar'),
+	minify = require('gulp-minify'),
 	Server = require('karma').Server;
 
 gulp.task('package', ['test'], function() {
 	gulp.src(['./src/**/*.js'])
       .pipe(concat('app.js'))
+	  .pipe(minify())
 	  .pipe(gulp.dest('./build/js'));
 });
 
@@ -39,7 +41,6 @@ gulp.task('sonar', function () {
             projectKey: 'sonar:js-calculator:1.0.0',
             projectName: 'js-calculator',
             projectVersion: '1.0.0',
-            // comma-delimited string of source directories 
             sources: 'src',
             language: 'js',
             sourceEncoding: 'UTF-8',
